@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Summary</title>
+</head>
+<body>
+    <h1>Video Summary</h1>
+
+    <form method="post" action="/video_summary">
+        <label for="youtube_url">Enter URL of YouTube video:</label>
+        <input type="text" id="youtube_url" name="youtube_url">
+        <input type="submit" value="Analyze Video">
+    </form>
+
+    {% if transcript_results %}
+    <h2>Transcript</h2>
+    <p>{{ transcript_results }}</p>
+    {% endif %}
+
+    {% if response %}
+    <h2>Summary</h2>
+    <p>{{ response }}</p>
+    {% endif %}
+
+</body>
+</html>
